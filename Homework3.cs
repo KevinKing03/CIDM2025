@@ -4,33 +4,16 @@ class Program
 {
     static void Main()
     {
-        Console.Write("Input an integer: ");
+        Console.Write("Input an integer N: ");
         int N = int.Parse(Console.ReadLine());
 
-        bool isPrime = true;
-
-        if (N < 2)
+        for (int i = 0; i < N; i++)
         {
-            isPrime = false;
-        }
-        else
-        {
-            for (int i = 2; i <= Math.Sqrt(N); i++)
+            for (int j = 0; j < N; j++)
             {
-                if (N % i == 0)
-                {
-                    isPrime = false;
-                    break;
-                }
+                Console.Write("*");
             }
-        }
-        if (isPrime)
-        {
-            Console.WriteLine($"{N} is prime");
-        }
-        else
-        {
-            Console.WriteLine($"{N} is non-prime");
+            Console.WriteLine();
         }
     }
 }
