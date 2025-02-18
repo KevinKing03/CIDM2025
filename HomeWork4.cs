@@ -2,17 +2,36 @@
 
 class Program
 {
-    static int GetLargestNumber(int num1, int num2)
+    static void PrintTriangle(int N, string shape)
     {
-        return (num1 > num2) ? num1 : num2;
+        Console.WriteLine($"N is: {N}; shape is {shape}");
+
+        if (shape.ToLower() == "left")
+        {
+            for (int i = 1; i <= N; i++)
+            {
+                Console.WriteLine(new string('*', i));
+            }
+        }
+        else if (shape.ToLower() == "right")
+        {
+            for (int i = 1; i <= N; i++)
+            {
+                Console.WriteLine(new string(' ', N - i) + new string('*', i));
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid shape! Please use 'left' or 'right'.");
+        }
     }
 
     static void Main()
     {
-        int a = 3, b = 5;
-        int largest = GetLargestNumber(a, b);
+        PrintTriangle(5, "left");
 
-        Console.WriteLine($"a = {a}; b = {b}");
-        Console.WriteLine($"The largest number is: {largest}");
+        Console.WriteLine(); 
+
+        PrintTriangle(5, "right");
     }
 }
